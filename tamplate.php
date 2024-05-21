@@ -20,10 +20,11 @@ $this->setFrameMode(true);
 		<p class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>" title="Двойной щелчок - Изменить тему">
 			<a href="<?=$aritem["DETAIL_PAGE_URL"]?>">
 				<?php if(!empty($aritem['PREVIEW_PICTURE']['SRC'])):?>
-				<img class="preview_picture" border="0" src="<?= $aritem['PREVIEW_PICTURE']['SRC']?>" width="298" height="181" alt="<?= isset($aritem["NAME"])? $aritem["NAME"] : '' ;?>" title="<?= isset($aritem["NAME"])? $aritem["NAME"] : '' ;?>" style="float:left">
+				<?php $name = isset($aritem["NAME"])? $aritem["NAME"] : '' ;?>
+				<img class="preview_picture" border="0" src="<?= $aritem['PREVIEW_PICTURE']['SRC']?>" width="298" height="181" alt="<?= $name;?>" title="<?= $name;?>" style="float:left">
 				<?endif;?>
 				</a>
-			<a href="<?= isset($aritem["DETAIL_PAGE_URL"])? $aritem["DETAIL_PAGE_URL"] : '' ;?>"><b><?= isset($aritem["NAME"]) ? $aritem["NAME"] : '' ;?></b></a><br>
+			<a href="<?= isset($aritem["DETAIL_PAGE_URL"])? $aritem["DETAIL_PAGE_URL"] : '' ;?>"><b><?= $name;?></b></a><br>
 				</p><div style="clear:both"></div>
 							<p></p>
 		<?php endforeach;?>
